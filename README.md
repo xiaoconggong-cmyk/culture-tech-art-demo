@@ -1,7 +1,6 @@
 # 🎨 文化IP智能创作与决策系统
 
 **文化 + 科技 + 艺术深度融合 Demo**  
-视袭&君看 · 文化科技实验室 技术预研项目
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://python.org)
 [![Gradio](https://img.shields.io/badge/Gradio-6.10%2B-orange)](https://gradio.app)
@@ -11,7 +10,7 @@
 
 ## 📌 项目简介
 
-本项目针对“文化IP的智能化创作与商业决策”场景，构建了一套融合 **AIGC管线**、**RAG知识库** 与 **Agent商业决策** 的完整 Demo。核心目标是将“视袭&君看”十年文化 IP 基因注入 AI 系统，实现从创意生成到商业落地的自动化闭环。
+本项目针对“文化IP的智能化创作与商业决策”场景，构建了一套融合 **AIGC管线**、**RAG知识库** 与 **Agent商业决策** 的完整 Demo。核心目标是将“GXC”十年文化 IP 基因注入 AI 系统，实现从创意生成到商业落地的自动化闭环。
 
 ## 🚀 核心功能
 
@@ -22,7 +21,7 @@
 
 ### 🧬 RAG 文化基因库
 - 使用 LangChain + HuggingFace Embeddings + FAISS 向量化 10 年文化 IP 文本
-- 语义检索并自动注入 **“视袭&君看·文化基因片段”** 标记
+- 语义检索并自动注入 **“GXC·文化基因片段”** 标记
 - 内置示例数据（非遗、敦煌、故宫、茶马古道等），支持上传自定义文档
 
 ### 📈 Agent 智能商业决策
@@ -46,3 +45,55 @@
 ```bash
 git clone https://github.com/xiaoconggong-cmyk/culture-tech-art-demo.git
 cd culture-tech-art-demo
+2. 创建虚拟环境并安装依赖
+bash
+python -m venv venv
+source venv/bin/activate      # Linux/Mac
+venv\Scripts\activate          # Windows
+pip install -r requirements.txt
+3. 配置 API 密钥（用于 Agent 模块）
+复制 .env.example 为 .env，填入你的硅基流动 API 密钥：
+
+text
+OPENAI_API_KEY=sk-xxxxxx
+OPENAI_BASE_URL=https://api.siliconflow.cn/v1
+LLM_MODEL=Qwen/Qwen2.5-7B-Instruct
+4. 启动 ComfyUI（可选，用于 AIGC 真实生成）
+下载 ComfyUI 并启动
+
+将本项目中的 modules/aigc_pipeline/workflow.json 导入 ComfyUI 并导出为 API 格式
+
+确保 FLUX.1 模型与 LoRA 放置在正确目录
+
+5. 运行 Demo
+bash
+python main.py
+浏览器打开 http://127.0.0.1:7860 即可体验三模块功能。
+
+🎯 使用示例
+AIGC 管线
+输入：敦煌飞天，选择风格 traditional
+
+输出：生成敦煌风格的水墨/壁画质感图像
+
+RAG 知识库
+点击“使用示例数据”构建向量库
+
+提问：苏绣有哪些创新技法？
+
+回答：检索相关文化片段并带基因标记
+
+Agent 决策
+提问：如何将敦煌飞天IP开发成文旅产品？
+
+输出：包含商业策略、预算估算、营销方案的完整报告
+
+🔮 我的“疯狂观察”
+AI 将催生“元文化”——文化 IP 不再是静态符号库，而是可自我进化的活态基因池。文化公司的角色从“守护者”变为“宇宙园丁”，设计初始规则让 AI 与人类共创无限衍生的文化生态。
+
+📄 许可证
+MIT
+
+📧 联系
+GXC - 2512497105@qq.com
+GitHub: xiaoconggong-cmyk
